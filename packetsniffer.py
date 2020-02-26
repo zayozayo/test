@@ -33,5 +33,5 @@ dest_port = tcph[1]
 sequence = tcph[2]
 acknowledgement = tcph[3]
 
-print ' Protocol : ' + str(protocol) + ' Source Address : ' + str(s_addr) + ' Destination Address : ' + str(d_addr)
+print ' Source Address : ' + str(s_addr) + ' Destination Address : ' + str(d_addr)
 print ' Source Port : ' + str(source_port) + ' Dest Port : ' + str(dest_port)		
