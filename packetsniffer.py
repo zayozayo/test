@@ -21,9 +21,17 @@ ip_header = packet[0:20]
 #now unpack them :)
 iph = unpack('!BBHHHBBH4s4s' , ip_header)
 	
-protocol = iph[6]
+
 s_addr = socket.inet_ntoa(iph[8]);
 d_addr = socket.inet_ntoa(iph[9]);
 	
+tcp_header = packet[21:21+20]
+
+tcph = unpack('!HHLLBBHHH',tcp_header)
+source_port = tcph[0]
+dest_port = tcph[1]
+sequence = tcph[2]
+acknowledgement = tcph[3]
+
 print ' Protocol : ' + str(protocol) + ' Source Address : ' + str(s_addr) + ' Destination Address : ' + str(d_addr)
-		
+print ' Source Port : ' + str(source_port) + ' Dest Port : ' + str(dest_port)		
