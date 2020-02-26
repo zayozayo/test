@@ -9,4 +9,4 @@ for link in page.links:
 	links.append({"page":link})
 	
 for link in links:
-	print("{}").format(link["page"])
+	print link["page"]
