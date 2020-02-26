@@ -6,7 +6,7 @@ page = wikipedia.page(wikipedia.search(sys.argv[-1])[0])
 links = []
 
 for link in page.links:
-	links.append({"page":link, "summary": wikipedia.summary(link)})
+	links.append({"page":link})
 	
 for link in links:
-	print("[{}] ({})").format(link["page"], link["summary"])
+	print("{}").format(link["page"])
